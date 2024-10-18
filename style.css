@@ -73,3 +73,17 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+/* Show when win */
+#showWinner {
+  font-size: 5em;
+  font-family: monospace;
+  position: absolute;
+  background-color: rgba(35, 100, 79, 0.706);
+  width: 588px;
+  left: calc(50% - 294px);
+  top: 40%;
+  border-radius: 20px;
+  text-align: center;
+  display: none;
+}
