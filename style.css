@@ -87,7 +87,7 @@
 #logRight {
   width: 50%;
   height: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   color: whitesmoke;
   font-family: monospace;
   font-size: 1.2em;
@@ -101,14 +101,14 @@
 }
 
 #logLeft h4 {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
   margin-top: 10px;
   margin-left: 10px;
 }
 
 #logLeft p {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
   margin-top: 10px;
   margin-left: 10px;
@@ -121,7 +121,7 @@
 }
 
 #logRight h4 {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
   margin-top: 10px;
   margin-right: 10px;
@@ -129,7 +129,7 @@
 }
 
 #logRight p {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   color: whitesmoke;
   margin-top: 10px;
   margin-left: 50px;
