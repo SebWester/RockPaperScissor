@@ -124,12 +124,12 @@ function resetGame() {
     // Reseting log window
     logLeft.innerText = "";
     let newHeaderL = document.createElement("h4");
-    newHeaderL.innerText = "Player chose:";
+    newHeaderL.innerText = "Players move:";
     logLeft.appendChild(newHeaderL);
 
     logRight.innerText = "";
     let newHeaderR = document.createElement("h4");
-    newHeaderR.innerText = "Computer chose:";
+    newHeaderR.innerText = "Computers move:";
     logRight.appendChild(newHeaderR);
   });
 }
