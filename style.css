@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  background-color: rgb(212, 255, 241);
+}
+
+#topDiv {
+  position: absolute;
+  left: calc(50% - 200px);
+  width: 400px;
+  background-color: white;
+  height: fit-content;
+}
+
+#topDiv h1 {
+  font-size: 3em;
+}
+
+#main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#playerDiv {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid darkgreen;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#computerDiv {
+  width: 50%;
+  height: 100%;
+  border-left: 1px solid darkgreen;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameIcons {
+  font-size: 4em;
+  display: flex;
+}
+
+.iLeft {
+  color: #ffd43b;
+}
+
+.iLeft:hover {
+  cursor: pointer;
+  font-size: 4.2em;
+}
+
+.iRight {
+  color: #b197fc;
+}
+
+#playerPoints,
+#computerPoints {
+  margin-top: 90px;
+  font-size: 3em;
+}
+
+.fa-regular {
+  margin-left: 20px;
+  margin-right: 20px;
+}
