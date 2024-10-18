@@ -2,6 +2,9 @@
 const showPlayerPoints = document.getElementById("playerPoints");
 const showComputerPoints = document.getElementById("computerPoints");
 const showWinner = document.getElementById("showWinner");
+const logLeft = document.getElementById("logLeft");
+const logRight = document.getElementById("logRight");
+const resetBtn = document.getElementById("reset");
 
 let totalGames = 5;
 let gameRound = 0;
@@ -11,13 +14,20 @@ let computerPoints = 0;
 // Computer choice
 function compChoice() {
   let randomNum = Math.floor(Math.random() * 3);
+  let newLogR = document.createElement("p");
 
   switch (randomNum) {
     case 0:
+      newLogR.innerText = "Rock";
+      logRight.appendChild(newLogR);
       return "rock";
     case 1:
+      newLogR.innerText = "Paper";
+      logRight.appendChild(newLogR);
       return "paper";
     case 2:
+      newLogR.innerText = "Scissor";
+      logRight.appendChild(newLogR);
       return "scissor";
   }
 }
@@ -31,6 +41,9 @@ let playerMove;
 function playerChoice() {
   playerRock.addEventListener("click", () => {
     playerMove = "rock";
+    let newLogL = document.createElement("p");
+    newLogL.innerText = "Rock";
+    logLeft.appendChild(newLogL);
     console.log(playerMove, gameRound);
     gameRound++;
     playRound();
@@ -38,6 +51,9 @@ function playerChoice() {
 
   playerPaper.addEventListener("click", () => {
     playerMove = "paper";
+    let newLogL = document.createElement("p");
+    newLogL.innerText = "Paper";
+    logLeft.appendChild(newLogL);
     console.log(playerMove, gameRound);
     gameRound++;
     playRound();
@@ -45,6 +61,9 @@ function playerChoice() {
 
   playerScissor.addEventListener("click", () => {
     playerMove = "scissor";
+    let newLogL = document.createElement("p");
+    newLogL.innerText = "Scissor";
+    logLeft.appendChild(newLogL);
     console.log(playerMove, gameRound);
     gameRound++;
     playRound();
@@ -62,6 +81,7 @@ function playRound() {
   if (totalGames === 0) {
     console.log("Game over!");
     showWinner.style.display = "block";
+    resetBtn.style.display = "block";
 
     if (playerPoints === computerPoints) {
       showWinner.innerText = "Tied!";
@@ -91,6 +111,30 @@ function checkWinner(player, computer) {
   }
 }
 
+function resetGame() {
+  resetBtn.addEventListener("click", () => {
+    showWinner.style.display = "none";
+    resetBtn.style.display = "none";
+    totalGames = 5;
+    // Reseting all points
+    playerPoints = 0;
+    computerPoints = 0;
+    showPlayerPoints.innerText = `Points: ${playerPoints}`;
+    showComputerPoints.innerText = `Points: ${computerPoints}`;
+    // Reseting log window
+    logLeft.innerText = "";
+    let newHeaderL = document.createElement("h4");
+    newHeaderL.innerText = "Player chose:";
+    logLeft.appendChild(newHeaderL);
+
+    logRight.innerText = "";
+    let newHeaderR = document.createElement("h4");
+    newHeaderR.innerText = "Computer chose:";
+    logRight.appendChild(newHeaderR);
+  });
+}
+
 showPlayerPoints.innerText = `Points: ${playerPoints}`;
 showComputerPoints.innerText = `Points: ${computerPoints}`;
 playerChoice();
+resetGame();
