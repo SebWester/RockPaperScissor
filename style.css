@@ -91,7 +91,7 @@
   color: whitesmoke;
   font-family: monospace;
   font-size: 1.2em;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 #logLeft {

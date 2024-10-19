@@ -38,36 +38,46 @@ const playerPaper = document.getElementById("paper");
 const playerScissor = document.getElementById("scissor");
 let playerMove;
 
+function handleRockClick() {
+  playerMove = "rock";
+  let newLogL = document.createElement("p");
+  newLogL.innerText = "Rock";
+  logLeft.appendChild(newLogL);
+  console.log(playerMove, gameRound);
+  gameRound++;
+  playRound();
+}
+
+function handlePaperClick() {
+  playerMove = "paper";
+  let newLogL = document.createElement("p");
+  newLogL.innerText = "Paper";
+  logLeft.appendChild(newLogL);
+  console.log(playerMove, gameRound);
+  gameRound++;
+  playRound();
+}
+
+function handleScissorClick() {
+  playerMove = "scissor";
+  let newLogL = document.createElement("p");
+  newLogL.innerText = "Scissor";
+  logLeft.appendChild(newLogL);
+  console.log(playerMove, gameRound);
+  gameRound++;
+  playRound();
+}
+
 function playerChoice() {
-  playerRock.addEventListener("click", () => {
-    playerMove = "rock";
-    let newLogL = document.createElement("p");
-    newLogL.innerText = "Rock";
-    logLeft.appendChild(newLogL);
-    console.log(playerMove, gameRound);
-    gameRound++;
-    playRound();
-  });
+  playerRock.addEventListener("click", handleRockClick);
+  playerPaper.addEventListener("click", handlePaperClick);
+  playerScissor.addEventListener("click", handleScissorClick);
+}
 
-  playerPaper.addEventListener("click", () => {
-    playerMove = "paper";
-    let newLogL = document.createElement("p");
-    newLogL.innerText = "Paper";
-    logLeft.appendChild(newLogL);
-    console.log(playerMove, gameRound);
-    gameRound++;
-    playRound();
-  });
-
-  playerScissor.addEventListener("click", () => {
-    playerMove = "scissor";
-    let newLogL = document.createElement("p");
-    newLogL.innerText = "Scissor";
-    logLeft.appendChild(newLogL);
-    console.log(playerMove, gameRound);
-    gameRound++;
-    playRound();
-  });
+function removePlayerClicks() {
+  playerRock.removeEventListener("click", handleRockClick);
+  playerPaper.removeEventListener("click", handlePaperClick);
+  playerScissor.removeEventListener("click", handleScissorClick);
 }
 
 // Play a round and check winner
@@ -90,6 +100,8 @@ function playRound() {
     } else {
       showWinner.innerText = "Computer wins!";
     }
+
+    removePlayerClicks();
   }
 }
 
@@ -131,6 +143,9 @@ function resetGame() {
     let newHeaderR = document.createElement("h4");
     newHeaderR.innerText = "Computers move:";
     logRight.appendChild(newHeaderR);
+
+    // Reseting player click events
+    playerChoice();
   });
 }
 
