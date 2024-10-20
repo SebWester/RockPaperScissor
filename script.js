@@ -1,4 +1,4 @@
-// Asigning variables
+// Assigning variables
 const showPlayerPoints = document.getElementById("playerPoints");
 const showComputerPoints = document.getElementById("computerPoints");
 const showWinner = document.getElementById("showWinner");
@@ -36,6 +36,7 @@ function compChoice() {
 const playerRock = document.getElementById("rock");
 const playerPaper = document.getElementById("paper");
 const playerScissor = document.getElementById("scissor");
+
 let playerMove;
 
 function handleRockClick() {
