@@ -12,6 +12,7 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 // Computer choice
+
 function compChoice() {
   let randomNum = Math.floor(Math.random() * 3);
   let newLogR = document.createElement("p");
